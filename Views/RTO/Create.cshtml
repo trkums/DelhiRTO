@@ -17,7 +17,7 @@
             @Html.LabelFor(model => model.VehicleType)
         </div>
         <div class="editor-field">
-            @Html.DropDownListFor(model =>model.VehicleType, new List<SelectListItem>{ new SelectListItem {Text="Bike",Value="Bike"},
+            @Html.DropDownListFor(model =>model.VehicleType, new List<SelectListItem>{ new SelectListItem {Text="Bike ",Value="Bike"},
                new SelectListItem {Text="Car",Value="Car"},
                new SelectListItem {Text="Heavy Vehicle",Value="Heavy Vehicle"}}, "Select")
             @Html.ValidationMessageFor(model => model.VehicleType)

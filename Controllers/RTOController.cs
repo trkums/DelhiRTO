@@ -93,15 +93,16 @@ namespace RTO.Controllers
 
         //
         // GET: /RTO/Delete/5
-
-        public ActionResult Delete(int id = 0)
+        [HttpDelete]
+        public int Delete(int id = 0)
         {
             RegDetail regdetail = db.RegDetails.Single(r => r.Id == id);
-            if (regdetail == null)
+            if (regdetail != null)
             {
-                return HttpNotFound();
+                db.RegDetails.DeleteObject(regdetail);
+                db.SaveChanges();
             }
-            return View(regdetail);
+            return id;
         }
 
         //

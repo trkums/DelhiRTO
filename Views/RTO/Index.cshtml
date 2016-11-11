@@ -7,35 +7,22 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-        //            $.ajax({
-        //                url: "http://localhost:3276/RTO/Index",
-        //                type: 'POST',
-        //                dataType: 'json',
-        //                data: { "keyword": "HR" },
-        //                contentType: 'application/json; charset=utf-8',
-        //                success: function (data) {
-        //                   // alert(JSON.stringify(data));
+        $(".delete").click(function () {
+            var loc = ((document.location.href).lastIndexOf("RTO") != -1) ? (document.location.href).substring(0, (document.location.href).lastIndexOf("RTO") + 1) : document.location.href;
+            loc = loc.replace("#","");
+            var id = $(this).attr("id");
+            $.ajax({
+                url: loc + "RTO/Delete",
+                type: 'DELETE',
+                dataType: 'json',
+                data: JSON.stringify({ 'id': id }),
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    $("#tr_" + data).hide();
+                }
+            });
 
-        //                    //$("#divData").html();
-        //                }
-        //            });
-
-        //        });
-        //        $("#Search").click(function () {
-        //            $.ajax({
-        //                url: "http://localhost:3276/RTO/Index",
-        //                type: 'POST',
-        //                dataType: 'json',
-        //                data: { "keyword": "HR" },
-        //                contentType: 'application/json; charset=utf-8',
-        //                success: function (data) {
-        //                   // alert(JSON.stringify(data));
-
-        //                    //$("#divData").html();
-        //                }
-        //            });
-
-        //        });
+        });
     });
 </script>
 
@@ -86,7 +73,7 @@
 
  
 @foreach (var item in Model) {
-    <tr>
+    <tr id="tr_@item.Id">
         <td>
             @Html.DisplayFor(modelItem => item.VehicleType)
         </td>
@@ -121,8 +108,7 @@
             @Html.DisplayFor(modelItem => item.Color)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) | <a id="@item.Id" href="#" class="delete">Delete</a>
         </td>
     </tr>
 }
