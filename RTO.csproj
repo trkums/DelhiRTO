@@ -182,12 +182,6 @@
   <ItemGroup>
     <Content Include="Views\RTO\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MvpRestApiLib\MvpRestApiLib.csproj">
-      <Project>{FB23CC9C-805D-45CD-A7CB-401CC8B1911D}</Project>
-      <Name>MvpRestApiLib</Name>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
