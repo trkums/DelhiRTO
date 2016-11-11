@@ -1,0 +1,142 @@
+﻿@model RTO.Models.RegDetail
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>RegDetail</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.VehicleType)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.VehicleType, new List<SelectListItem>{ new SelectListItem {Text="Bike",Value="Bike"},
+               new SelectListItem {Text="Car",Value="Car"},
+               new SelectListItem {Text="Heavy Vehicle",Value="Heavy Vehicle"}}, "Select")
+            @Html.ValidationMessageFor(model => model.VehicleType)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.VehicleMake)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.VehicleMake)
+            @Html.ValidationMessageFor(model => model.VehicleMake)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.VehicleName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.VehicleName)
+            @Html.ValidationMessageFor(model => model.VehicleName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OwnerName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.OwnerName)
+            @Html.ValidationMessageFor(model => model.OwnerName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MonthOfManu)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MonthOfManu)
+            @Html.ValidationMessageFor(model => model.MonthOfManu)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.YearOfManu)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.YearOfManu)
+            @Html.ValidationMessageFor(model => model.YearOfManu)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ChassisNumber)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ChassisNumber)
+            @Html.ValidationMessageFor(model => model.ChassisNumber)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Engine)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Engine)
+            @Html.ValidationMessageFor(model => model.Engine)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FuelUsed)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.FuelUsed, new List<SelectListItem>{ new SelectListItem {Text="Petrol",Value="Petrol"},
+               new SelectListItem {Text="Diesel",Value="Diesel"},
+               new SelectListItem {Text="CNG",Value="CNG"}}, "Select")
+            @Html.ValidationMessageFor(model => model.FuelUsed)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NoOfCylinder)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NoOfCylinder)
+            @Html.ValidationMessageFor(model => model.NoOfCylinder)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ValidFrom)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ValidFrom)
+            @Html.ValidationMessageFor(model => model.ValidFrom)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ValidUntil)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ValidUntil)
+            @Html.ValidationMessageFor(model => model.ValidUntil)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RegNumber)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RegNumber)
+            @Html.ValidationMessageFor(model => model.RegNumber)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Color)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Color)
+            @Html.ValidationMessageFor(model => model.Color)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

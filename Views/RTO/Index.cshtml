@@ -1,0 +1,129 @@
+﻿@model IEnumerable<RTO.Models.RegDetail>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        //            $.ajax({
+        //                url: "http://localhost:3276/RTO/Index",
+        //                type: 'POST',
+        //                dataType: 'json',
+        //                data: { "keyword": "HR" },
+        //                contentType: 'application/json; charset=utf-8',
+        //                success: function (data) {
+        //                   // alert(JSON.stringify(data));
+
+        //                    //$("#divData").html();
+        //                }
+        //            });
+
+        //        });
+        //        $("#Search").click(function () {
+        //            $.ajax({
+        //                url: "http://localhost:3276/RTO/Index",
+        //                type: 'POST',
+        //                dataType: 'json',
+        //                data: { "keyword": "HR" },
+        //                contentType: 'application/json; charset=utf-8',
+        //                success: function (data) {
+        //                   // alert(JSON.stringify(data));
+
+        //                    //$("#divData").html();
+        //                }
+        //            });
+
+        //        });
+    });
+</script>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+    @using(Html.BeginForm("Index","RTO","POST")){
+    @Html.TextBox("keyword", "", new { @PlaceHolder = "Reg No / Vehicle Name" })
+    <input type="submit" name="Search" id="Search" value="Search" />
+    }
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OwnerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MonthOfManu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChassisNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Engine)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FuelUsed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoOfCylinder)
+        </th>
+        <th>
+            Validity
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Color)
+        </th>
+        <th>Actions</th>
+    </tr>
+
+ 
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.VehicleType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VehicleMake) - @Html.DisplayFor(modelItem => item.VehicleName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OwnerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MonthOfManu) / @Html.DisplayFor(modelItem => item.YearOfManu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChassisNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Engine)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FuelUsed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoOfCylinder)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValidFrom) - @Html.DisplayFor(modelItem => item.ValidUntil)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Color)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+</table>

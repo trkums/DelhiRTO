@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RTOModelStoreContainer" CdmEntityContainer="RTOContext">
+    <EntitySetMapping Name="RegDetails">
+      <EntityTypeMapping TypeName="RTOModel.RegDetail">
+        <MappingFragment StoreEntitySet="RegDetails">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+          <ScalarProperty Name="VehicleMake" ColumnName="VehicleMake" />
+          <ScalarProperty Name="VehicleName" ColumnName="VehicleName" />
+          <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+          <ScalarProperty Name="MonthOfManu" ColumnName="MonthOfManu" />
+          <ScalarProperty Name="YearOfManu" ColumnName="YearOfManu" />
+          <ScalarProperty Name="ChassisNumber" ColumnName="ChassisNumber" />
+          <ScalarProperty Name="Engine" ColumnName="Engine" />
+          <ScalarProperty Name="FuelUsed" ColumnName="FuelUsed" />
+          <ScalarProperty Name="NoOfCylinder" ColumnName="NoOfCylinder" />
+          <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
+          <ScalarProperty Name="ValidUntil" ColumnName="ValidUntil" />
+          <ScalarProperty Name="RegNumber" ColumnName="RegNumber" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

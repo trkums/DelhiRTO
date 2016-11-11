@@ -1,0 +1,117 @@
+﻿@model RTO.Models.RegDetail
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>RegDetail</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.VehicleType)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.VehicleType)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.VehicleMake)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.VehicleMake)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.VehicleName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.VehicleName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OwnerName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OwnerName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MonthOfManu)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MonthOfManu)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.YearOfManu)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.YearOfManu)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ChassisNumber)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ChassisNumber)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Engine)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Engine)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FuelUsed)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FuelUsed)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NoOfCylinder)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NoOfCylinder)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ValidFrom)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ValidFrom)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ValidUntil)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ValidUntil)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RegNumber)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RegNumber)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Color)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Color)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
